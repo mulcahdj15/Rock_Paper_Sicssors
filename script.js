@@ -1,12 +1,10 @@
-console.log("welcome to my game.. do you want to play?")
-
 let humanScore = 0;//declare players score
 let computerScore = 0;//declare computers score
+let round = 0; //the current round;
 
 //function for getComputer
 function getComputer(){
     const cpuAns = Math.floor((Math.random() * 3) + 1);
-    console.log(cpuAns);
     
     if (cpuAns === 1){
         return "rock"
@@ -34,21 +32,25 @@ function whoWon(getComputer,getHuman) {
     if ( human === "paper" && cpu === "rock" || human === "rock" && cpu === "scissors" || getHuman === "scissors" && getComputer === "paper"){
         console.log("The Human is superiour ")
         return humanScore++;
-    } else if ( getHuman === "paper" && getComputer === "rock" || getHuman === "rock" && getComputer === "scissors" || getHuman === "scissors" && getComputer === "paper"){
-        console.log("The Human is superiour ")
-        return humanScore++;
+    } else if ( human === "rock" && cpu === "paper" || human === "scissors" && cpu === "rock" || getHuman === "paper" && getComputer === "scissors"){
+        console.log("The AI is taking over ")
+        return computerScoreScore++;
+    } else{
+        return console.log("it is a draw everyone is a loser")
     }
             
-    }
-
-    switch (human === "paper")
-
 }
 
 //function for playing 1 round
+function playRound(){
+    let computerChoice = getComputer();
+    let humanChoice = getHuman();
+    
+    return whoWon(computerChoice,humanChoice);
+}
+
+//function for playing a game
+function playGame();
 
 
-//function to increment winners score
 
-
-//function for message to winner.
