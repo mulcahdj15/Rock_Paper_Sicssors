@@ -21,7 +21,13 @@ function getHuman(){
 
     const humanAnsLower = humanAns.toLowerCase();
 
-    return humanAnsLower;
+    if( humanAnsLower === "rock" || "paper" || "scissors"){
+        return humanAnsLower;
+    } else{
+        console.log("invalid response try again, maybe you have a spelling mistake");
+    }
+
+    
 }
 
 //Function for comparing score
@@ -53,7 +59,7 @@ function playRound(){
 function playGame(){
     console.log("Do you want to play a game?");
 
-     for (let i = 0, i > 5, i++;){
+     for (let i = 0; i < 5; i++){
         playRound();
         console.log(`Human: ${humanScore}`);
         console.log(`Computer: ${computerScore}`);
