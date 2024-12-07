@@ -50,7 +50,25 @@ function playRound(){
 }
 
 //function for playing a game
-function playGame();
+function playGame(){
+    console.log("Do you want to play a game?");
+
+     for (let i = 0, i > 5, i++;){
+        playRound();
+        console.log(`Human: ${humanScore}`);
+        console.log(`Computer: ${computerScore}`);
+    }
+    if (humanScore > computerScore){
+        console.log("The Humans have defeated the Ai, Until next time");
+    } else if (humanScore < computerScore){
+        console.log("The Computers have risen up")
+    } else{
+        console.log("the rare case of a draw")
+    }
+}
+
+playGame();
+
 
 
 
