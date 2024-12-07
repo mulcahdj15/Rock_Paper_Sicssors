@@ -21,10 +21,11 @@ function getHuman(){
 
     const humanAnsLower = humanAns.toLowerCase();
 
-    if( humanAnsLower === "rock" || "paper" || "scissors"){
+    if( humanAnsLower === "rock" || humanAnsLower === "paper" || humanAnsLower === "scissors"){
         return humanAnsLower;
     } else{
         console.log("invalid response try again, maybe you have a spelling mistake");
+        return false;
     }
 
     
@@ -33,15 +34,21 @@ function getHuman(){
 //Function for comparing score
 function whoWon(getComputer,getHuman) {
     let cpu = getComputer;
+    console.log(`Computer choice was ${cpu} `)
     let human = getHuman;
+    console.log(`Humans choice was ${human}`)
 
     if ( human === "paper" && cpu === "rock" || human === "rock" && cpu === "scissors" || getHuman === "scissors" && getComputer === "paper"){
         console.log("The Human is superiour ")
         return humanScore++;
     } else if ( human === "rock" && cpu === "paper" || human === "scissors" && cpu === "rock" || getHuman === "paper" && getComputer === "scissors"){
         console.log("The AI is taking over ")
-        return computerScoreScore++;
-    } else{
+        return computerScore++;
+    } else if(human === false){
+        console.log("learn to type dumb dumb, minus 1 point")
+        return humanScore--;
+
+    }else{
         return console.log("it is a draw everyone is a loser")
     }
             
